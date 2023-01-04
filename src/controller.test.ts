@@ -22,9 +22,10 @@ describe('controllerのテスト', () => {
     })
   })
   describe('failing test', () => {
-    const user1 = { email: 'user1@test.com', password: 'abcdefg' }
+    const user1 = { email: 'user2@test.com', password: 'abcdefg' }
     it('ユーザー登録', async () => {
       const result = await supertest(app).post('/api').send(user1)
+      console.log(result)
       expect(result.statusCode).toBe(500)
     })
   })
